@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "hello-fibowat.fullname" . }}
+  labels:
+    app: {{ template "hello-fibowat.name" . }}
+    chart: {{ template "hello-fibowat.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: {{ .Values.service.metricsport }}
+      targetPort: http
+      protocol: TCP
+      name: metrics
+  selector:
+    app: {{ template "hello-fibowat.name" . }}
+    release: {{ .Release.Name }}
