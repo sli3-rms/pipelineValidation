@@ -1,2 +1,39 @@
-rest-api
-rest-service
+# Definition of artifact targets that exist 
+# in this repo
+# (required)
+artifacts: 
+  -
+    name: "rest-api"
+    deployable: false
+    build_targets: 
+      - "jar"
+  -
+    name: "rest-service"
+    deployable: true
+    build_targets: 
+      - "jar"
+      - "docker"
+
+# Optional "targets" node. This will
+# be necessary in order to potentially 
+# deliver multiple targets from one repo 
+# independently (e.g. a library needs to be
+# versioned independently or a grouping of 
+# artifacts go together even though they live 
+# in teh same repo). The default is a single 
+# target named "default" that simply includes
+# the existing artifacts in the order defined
+# these may translate (for example), into distinct 
+# jenkins jobs that could be triggered
+
+# (optional)
+targets:
+  - 
+    name: "default"
+    artifacts:
+      - "rest-api"
+      - "rest-service"
+  - 
+    name: lib_only
+    artifacts: 
+      - "rest-api"
