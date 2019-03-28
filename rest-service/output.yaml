@@ -1,0 +1,17 @@
+outputs: 
+  -
+    name: rest-service.jar
+    type: maven
+    target: jar
+    publish: none
+    version: 1.0-SNAPSHOT
+    properties: 
+      groupId: com.rms.samples
+      artifactId: rest-service
+      
+  -
+    name: rest-service
+    type: docker
+    target: docker
+    publish: global
+    version: 1.0

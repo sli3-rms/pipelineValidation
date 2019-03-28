@@ -1,0 +1,11 @@
+outputs: 
+  -
+    name: rest-api.jar
+    type: maven
+    target: jar
+    publish: local
+    version: 1.0-SNAPSHOT
+    properties: 
+      groupId: com.rms.samples
+      artifactId: rest-api
+      
