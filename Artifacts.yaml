@@ -27,13 +27,13 @@ artifacts:
 # jenkins jobs that could be triggered
 
 # (optional)
-targets:
-  - 
-    name: "default"
-    artifacts:
-      - "rest-api"
-      - "rest-service"
-  - 
-    name: lib_only
-    artifacts: 
-      - "rest-api"
+#targets:
+#  - 
+#    name: "default"
+#    artifacts:
+#      - "rest-api"
+#      - "rest-service"
+#  - 
+#    name: lib_only
+#    artifacts: 
+#      - "rest-api"
