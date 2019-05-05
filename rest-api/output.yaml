@@ -2,7 +2,7 @@ outputs:
   -
     name: rest-api.jar
     type: maven
-    target: jar
+    target: java
     publish: local
     version: 1.0-SNAPSHOT
     properties: 
