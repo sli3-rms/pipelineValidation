@@ -3,16 +3,37 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+    - repository: platform
+      type: github
+      name: RMS/cloud-platform
+      endpoint: RMS
+
 trigger: none
 
-pool:
-  vmImage: 'Ubuntu-16.04'
+stages:
+- stage: Build
+  jobs: 
+  - template: sdp/lib/build.yaml@platform
+    parameters:
+      targets:
+      - target: 
+        name: rest-api
+        lang: java        
+      - target: 
+        name: rest-service
+        lang: java
+      - target: 
+        name: rest-service
+        lang: docker
+- stage: Deploy
+  dependsOn: Build
+  jobs: 
+  - template: sdp/lib/deploy.yaml@platform
+    parameters:
+      services: 
+      - service:
+        name: sdp-onboard-svc1
+        
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'

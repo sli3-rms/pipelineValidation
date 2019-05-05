@@ -3,3 +3,11 @@
 .classpath
 .settings
 org.eclipse.*
+*.jar
+*.class
+*.lst
+*.properties
+
+# tests
+**/surefire-reports/TEST-*.xml
+JunitTests.txt

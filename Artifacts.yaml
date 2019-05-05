@@ -4,14 +4,12 @@
 artifacts: 
   -
     name: "rest-api"
-    deployable: false
     build_targets: 
-      - "jar"
+      - "java"
   -
     name: "rest-service"
-    deployable: true
     build_targets: 
-      - "jar"
+      - "java"
       - "docker"
 
 # Optional "targets" node. This will
