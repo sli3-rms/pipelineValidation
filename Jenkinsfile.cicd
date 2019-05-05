@@ -1,6 +1,0 @@
-#!groovy
-
-new com.rms.pipeline.build.MavenPipeline(this, "rest-api", "").execute();
-new com.rms.pipeline.dpcker.ImagePipeline(this, "baseImageName", "serviceImageOut").execute();
-new com.rms.pipeline.ks8.HelmPipeline(this, "serviceName", "environmentName").execute();
-new com.rms.pipeline.terraform.TerraformPipeline(this, "serviceName", "environmentName", "terraformDir").execute();
