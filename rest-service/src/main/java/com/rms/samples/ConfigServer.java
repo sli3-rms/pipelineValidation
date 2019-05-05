@@ -6,14 +6,19 @@ import java.io.InputStreamReader;
 import com.sun.net.httpserver.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class ConfigServer extends RestServer {
 
     private static final Map<String, String> configValues = new HashMap<>();
 
+    private boolean debug;
+
     public ConfigServer() {
         this.SetHandler("/api/config/get_value", (e -> this.GetConfigValue(e)));
         this.SetHandler("/api/config/set_value", (e -> this.SetConfigValue(e)));
+        this.debug = true;
     }
 
     protected void GetConfigValue(HttpExchange exchange) throws IOException {
@@ -41,6 +46,13 @@ public class ConfigServer extends RestServer {
         JSONObject jo = new JSONObject();
         jo.put("name", name);
         jo.put("value", value);
+
+        if(this.debug)
+        {
+            InetAddress ip = InetAddress.getLocalHost();
+            String hostName = ip.getHostName();
+            jo.put("host", hostName);
+        }
 
         this.SendResponse(jo.toJSONString(), exchange);
     }

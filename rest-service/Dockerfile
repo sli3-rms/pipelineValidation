@@ -1,4 +1,6 @@
 FROM java:8
+#FROM ubuntu:16.04
+#FROM builder 
 
 RUN mkdir -p /opt/rest-service
 

@@ -2,7 +2,7 @@ outputs:
   -
     name: rest-service.jar
     type: maven
-    target: jar
+    target: java
     publish: none
     version: 1.0-SNAPSHOT
     properties: 
@@ -14,4 +14,4 @@ outputs:
     type: docker
     target: docker
     publish: global
-    version: 1.0
+    version: 1.2.###
