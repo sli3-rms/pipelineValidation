@@ -21,7 +21,7 @@ stages:
       - target: 
         name: rest-api
         lang: java
-        tests: false        
+        tests: true        
       - target: 
         name: rest-service
         lang: java
