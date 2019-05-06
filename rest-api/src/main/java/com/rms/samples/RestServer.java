@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 public class RestServer {
 
-    private HttpServer server;
+    private HttpServer server
     private int serverPort;
     private int threads;
     private Map<String, HttpHandler> restHandlers;
