@@ -1,7 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
 resources:
   repositories:
@@ -16,17 +12,17 @@ stages:
 - template: sdp/pipeline.yaml@platform
   parameters:
     targets:
-      - target: 
-        name: rest-api
-        lang: java        
-      - target: 
-        name: rest-service
-        lang: java
-      - target: 
-        name: rest-service
-        lang: docker
+    - target: 
+      name: rest-api
+      lang: java        
+    - target: 
+      name: rest-service
+      lang: java
+    - target: 
+      name: rest-service
+      lang: docker
     services: 
-      - service:
-        name: sdp-onboard-svc1
+    - service:
+      name: sdp-onboard-svc1
         
 
