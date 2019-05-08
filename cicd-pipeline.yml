@@ -13,7 +13,7 @@ resources:
 trigger: none
 
 stages: 
-- template: sdp/lib/pipeline.yaml@platform
+- template: sdp/pipeline.yaml@platform
   parameters:
     targets:
       - target: 
