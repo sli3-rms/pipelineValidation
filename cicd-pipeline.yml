@@ -14,7 +14,8 @@ stages:
     targets:
     - target: 
       name: rest-api
-      lang: java        
+      lang: java
+      tests: true        
     - target: 
       name: rest-service
       lang: java
