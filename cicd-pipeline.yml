@@ -11,6 +11,7 @@ trigger: none
 stages: 
 - template: sdp/pipeline.yaml@platform
   parameters:
+    version: 1.0
     targets:
     - target: 
       name: rest-api
@@ -24,5 +25,3 @@ stages:
     services: 
     - service:
       name: sdp-onboard-svc1
-        
-
