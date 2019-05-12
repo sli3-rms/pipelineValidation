@@ -4,7 +4,6 @@ deployment:
   name: sdp-onboard-svc1
   resources: [] 
   services: 
-  - 
-    image: rest-service
+  - image: rest-service
     exposedPort: 80
     containerPort: 8000
