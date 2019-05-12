@@ -2,12 +2,10 @@
 # in this repo
 # (required)
 artifacts: 
-  -
-    name: "rest-api"
+  - name: "rest-api"
     build_targets: 
       - "java"
-  -
-    name: "rest-service"
+  - name: "rest-service"
     build_targets: 
       - "java"
       - "docker"
