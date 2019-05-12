@@ -6,7 +6,11 @@
 
     <groupId>com.rms.samples</groupId>
     <artifactId>rest-api</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${rest-api.version}</version>
+
+    <properties>
+        <rest-api.version>1.0-SNAPSHOT</rest-api.version>
+    </properties>
 
     <dependencies>
         <dependency>
