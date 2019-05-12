@@ -1,0 +1,17 @@
+name: rest-service
+targets:
+- !java
+  type: java
+  dependencies:
+  - type: maven
+    repository: local
+    artifacts: 
+    - com.rms.samples.rest-api
+  tests:
+  - type: maven
+    debug: true
+  outputs:
+  - type: maven
+    repository: local
+    artifacts:
+    - com.rms.samples:rest-service
