@@ -47,4 +47,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <url>${sdp-artifactory.url}</url>
+        </repository>
+    </distributionManagement>
 </project>
