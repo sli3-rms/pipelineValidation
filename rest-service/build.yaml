@@ -9,7 +9,7 @@ targets:
     artifacts: 
     - rest-api:1.1
   tests:
-  - type: maven
+  - type: unittest
     debug: true
   outputs:
   - type: maven
