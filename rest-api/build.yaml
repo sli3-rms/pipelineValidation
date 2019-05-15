@@ -3,6 +3,7 @@ targets:
 - !java
   type: java
   name: rest-api
+  majorMinor: 1.1
   tests:
   - type: maven
     debug: true
