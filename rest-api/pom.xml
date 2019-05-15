@@ -7,32 +7,34 @@
     <groupId>com.rms.samples</groupId>
     <artifactId>rest-api</artifactId>
     <version>${rest-api.version}</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>rest-core</module>
+        <module>rest-common</module>
+    </modules>
 
     <properties>
         <rest-api.version>1.0-SNAPSHOT</rest-api.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.4.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.4.2</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <build>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -46,5 +48,10 @@
         </plugins>
     </build>
 
-
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <url>${sdp-artifactory.url}</url>
+        </repository>
+    </distributionManagement>
 </project>

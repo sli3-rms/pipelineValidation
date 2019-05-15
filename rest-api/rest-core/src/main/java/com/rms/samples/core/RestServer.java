@@ -1,4 +1,4 @@
-package com.rms.samples;
+package com.rms.samples.core;
 
 import java.io.OutputStream;
 import java.io.IOException;
@@ -6,6 +6,8 @@ import java.net.InetSocketAddress;
 import com.sun.net.httpserver.*;
 import java.util.*;
 import java.util.concurrent.Executors;
+
+import com.rms.samples.common.*;
 
 public class RestServer {
 
@@ -30,6 +32,8 @@ public class RestServer {
     }
 
     public void start() throws IOException {
+        Helper.Print("start");
+
         if(this.server == null) {
             // initialize the server.
             this.server = HttpServer.create(new InetSocketAddress(this.serverPort), 0);
@@ -46,6 +50,8 @@ public class RestServer {
     }
 
     public void stop(){
+        Helper.Print("stop");
+
         if(this.server != null) {
             this.server.stop(0);
             this.server = null;

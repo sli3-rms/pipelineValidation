@@ -2,9 +2,8 @@ name: rest-api
 targets:
 - !java
   type: java
-  #dependencies:
-  #- type: maven
-  #  repository: remote
+  name: rest-api
+  majorMinor: 1.1
   tests:
   - type: maven
     debug: true
@@ -12,5 +11,6 @@ targets:
   - type: maven
     repository: local
     artifacts:
-    - com.rms.samples:rest-api
-    
+    - rest-api
+    - rest-common
+    - rest-core
