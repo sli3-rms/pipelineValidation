@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.rms.samples</groupId>
-            <artifactId>rest-api</artifactId>
+            <artifactId>rest-core</artifactId>
             <version>${rest-api.version}</version>
         </dependency>
         <dependency>

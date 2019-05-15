@@ -9,6 +9,8 @@ import org.json.simple.parser.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import com.rms.samples.core.*;
+
 public class ConfigServer extends RestServer {
 
     private static final Map<String, String> configValues = new HashMap<>();
