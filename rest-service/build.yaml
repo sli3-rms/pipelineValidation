@@ -2,11 +2,12 @@ name: rest-service
 targets:
 - !java
   type: java
+  name: rest-service
   dependencies:
   - type: maven
     repository: local
     artifacts: 
-    - com.rms.samples.rest-api
+    - rest-api
   tests:
   - type: maven
     debug: true
@@ -14,4 +15,7 @@ targets:
   - type: maven
     repository: local
     artifacts:
-    - com.rms.samples:rest-service
+    - rest-service
+- !docker
+  type: docker
+  name: rest-service
