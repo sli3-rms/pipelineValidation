@@ -12,4 +12,4 @@ EXPOSE 8000
 
 WORKDIR /opt/rest-service
 
-CMD exec java -jar ${artifact}.jar
+CMD exec java -jar ${artifact}
