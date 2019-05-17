@@ -18,4 +18,7 @@ targets:
     - rest-service
 - !docker
   type: docker
-  name: rest-service
+  imageName: rest-service
+  dockerFile: Dockerfile
+  buildArgs:
+    - artifact:rest-service-$(Target.Version).jar
