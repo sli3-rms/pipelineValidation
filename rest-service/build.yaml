@@ -9,7 +9,7 @@ targets:
     artifacts: 
     - rest-api:1.1
   tests:
-  - type: maven
+  - type: unittest
     debug: true
   outputs:
   - type: maven
@@ -19,3 +19,8 @@ targets:
 - !docker
   type: docker
   name: rest-service
+  images:
+  - imageName: rest-service
+    dockerFile: Dockerfile
+    buildArgs:
+    - artifact:rest-service-$(Target.Version).jar
