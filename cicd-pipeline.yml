@@ -7,9 +7,6 @@ resources:
 
 trigger: none
 
-variables:
-- group: cicd-agent-properties
-
 stages: 
 - template: sdp/pipeline.yaml@platform
   parameters:
