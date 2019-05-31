@@ -1,9 +1,10 @@
-
-
-deployment:
-  name: sdp-onboard-svc1
-  resources: [] 
-  services: 
-  - image: rest-service
-    exposedPort: 80
-    containerPort: 8000
+---
+serviceName: sdp-onboard-svc1
+microservices:
+    - name: rest-service
+      image: rest-service
+      httpPath: /(.*)
+      rewriteTarget: /$1
+      containerPort: 8000
+      internalServicePort: 80
+      replicas: 1

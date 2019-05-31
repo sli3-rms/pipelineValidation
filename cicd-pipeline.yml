@@ -1,3 +1,4 @@
+---
 resources:
   repositories:
     - repository: platform
@@ -7,21 +8,21 @@ resources:
 
 trigger: none
 
-stages: 
-- template: sdp/pipeline.yaml@platform
-  parameters:
-    version: 1.0
-    targets:
-    - target: 
-      name: rest-api
-      lang: java
-      tests: true        
-    - target: 
-      name: rest-service
-      lang: java
-    - target: 
-      name: rest-service
-      lang: docker
-    services: 
-    - service:
-      name: sdp-onboard-svc1
+stages:
+  - template: sdp/pipeline.yaml@platform
+    parameters:
+      version: 1.0
+      targets:
+        - target:
+          name: rest-api
+          lang: java
+          tests: true
+        - target:
+          name: rest-service
+          lang: java
+        - target:
+          name: rest-service
+          lang: docker
+      services:
+        - service:
+          name: sdp-onboard-svc1
